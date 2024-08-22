@@ -16,8 +16,8 @@ def get_openai_response(prompt):
     OpenAI에게 프롬프트를 전달하고, 답변을 받아오는 함수.
     """
     response = openai.ChatCompletion.create(
- #       model="gpt-4-turbo-preview",
-        model="gpt-3.5-turbo",
+        model="gpt-4-turbo-preview",
+#        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful AI assistant."},
             {"role": "user", "content": prompt}
@@ -48,7 +48,7 @@ def main():
                 prompt = (f"너는 고객의 정보를 받아 여행 경로를 추천해주는 전문가야. 성별: {question_gender}, 나이: {question_age}. "
                         f"여행지: {question_place}, 여행기간: {question_start_date} ~ {question_end_date}. "
                         f"이 정보를 바탕으로 여행 스케줄을 추천해줘. {question_must}는 꼭 방문하고 싶고, 스케줄을 추천해줄 때 이동 시에는 {question_transportation}을 이용할 거야."
-                        f"사용되어야 하는 교통수단, 교통비, 입장료 등을 계산해서 같이 알려줘. ")
+                        f"사용되어야 하는 교통수단, 교통비, 입장료 등을 계산해서 같이 알려줘. 추천하는 관광지의 사진도 같이 보내줬으면 좋겠어. ")
                 with st.spinner('생성 AI로 답변을 생성하는 중입니다 ...'):
                     response = get_openai_response(prompt)
                 st.markdown(f'**Bot:**\n{response}')
