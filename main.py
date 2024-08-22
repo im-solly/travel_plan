@@ -27,7 +27,7 @@ def get_openai_response(prompt):
 
 def main():
     print(API_KEY)
-    st.title('여행 계획 세우기 귀찮지? 생성 AI에게 물어보자!')
+    st.title('여행 계획 세우기 귀찮지? 내가 알려줄게!')
     st.image("travel.jpg", use_column_width=True)
 
     # 사이드바에서 사용자 정보 입력받기
