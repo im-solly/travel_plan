@@ -7,7 +7,7 @@ import os
 
 # OpenAI API 키 설정
 #API_KEY = os.environ['API_KEY']
-openai.api_key = open("./key.txt").readlines()
+openai.api_key = open("../key.txt").readlines()[0]
 
 col1, col2 = st.columns(2)
 
