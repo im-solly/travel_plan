@@ -6,8 +6,8 @@ import requests
 import os
 
 # OpenAI API 키 설정
-API_KEY = os.environ['API_KEY']
-openai.api_key = API_KEY
+#API_KEY = os.environ['API_KEY']
+openai.api_key = open("./key.txt").readlines()
 
 col1, col2 = st.columns(2)
 
@@ -16,8 +16,8 @@ def get_openai_response(prompt):
     OpenAI에게 프롬프트를 전달하고, 답변을 받아오는 함수.
     """
     response = openai.ChatCompletion.create(
-        model="gpt-4-turbo-preview",
-#        model="gpt-3.5-turbo",
+#        model="gpt-4-turbo-preview",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful AI assistant."},
             {"role": "user", "content": prompt}
